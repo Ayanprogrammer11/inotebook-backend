@@ -7,18 +7,18 @@ const fetchuser = (req, res, next) => {
     const token = req.header('auth-token'); // Here the token value will be the http header that was sent while calling the Api
 
     if (!token) {
-        res.status(401).send({ error: "Please authenticate using a valid token when token not given" })
+        res.status(401).send({ error: "Please authenticate using a valid token"})
     }
     try {
         // Verify the token
         const data = jwt.verify(token, JWT_SECRET);
         if(!data) {
-            return res.status(401).json({error: "Inavlid Token"})
+            return res.status(401).json({error: "Invalid Token"})
         }
         req.user = data.user;
             next();
     } catch (error) {
-        res.status(401).send({ error: "Please authenticate using a valid token from catch" })
+        res.status(401).send({ error: "Please authenticate using a valid token" })
     }
 
 }
