@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const mongoURI = "mongodb+srv://AyanProgrammer11:Apple123@inotebookcluster.nzmawnk.mongodb.net/iNotebookDatabase?retryWrites=true&w=majority"
+const mongoURI = process.env.databaseurl;
 
 const connectToMongo = async () => {
     // console.log("Function running")
