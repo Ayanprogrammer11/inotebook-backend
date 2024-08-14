@@ -3,7 +3,6 @@ const express = require('express');
 const User = require('../models/User')
 const router = express.Router();
 const bcrypt = require("bcryptjs");
-// Destrcturing: It would be like this index[0] = require("express-validator").body - And So On....
 const {body, validationResult} = require("express-validator");
 const jwt = require("jsonwebtoken");
 let fetchuser = require('../middleware/fetchuser');

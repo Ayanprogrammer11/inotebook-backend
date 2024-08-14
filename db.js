@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const mongoURI = process.env.databaseurl;
-
+mongoose.set('strictQuery', false);
 const connectToMongo = async () => {
     // console.log("Function running")
     try {
